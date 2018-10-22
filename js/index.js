@@ -2,9 +2,12 @@ import { render, h } from 'preact';
 import { trackProjectOpened, Switcher } from './switcher';
 import { App } from './search';
 import { isNSPage, isDocPage, initSrollIndicator, initToggleRaw, initDocTitle, restoreSidebarScrollPos } from './cljdoc';
+import { hideNestedArticles } from './doctree';
 
 trackProjectOpened()
 restoreSidebarScrollPos()
+hideNestedArticles()
+
 render(h(Switcher), document.querySelector('#cljdoc-switcher'))
 render(h(App), document.querySelector('#cljdoc-search'))
 
